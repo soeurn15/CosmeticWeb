@@ -4,21 +4,26 @@ const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const isVercel = process.env.VERCEL || false;
 
 // Middleware for parsing JSON and urlencoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve all static website files from the root directory
-app.use(express.static(__dirname));
+// Resolve appropriate data logging directory
+// On Vercel, the main project directory is read-only. We must write to the /tmp folder.
+const dataDir = isVercel ? '/tmp' : path.join(__dirname, '..', 'data');
 
-// Ensure the local JSON data directory exists
-const dataDir = path.join(__dirname, 'data');
-if (!fs.existsSync(dataDir)) {
+if (!isVercel && !fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir);
 }
 
-// Utility to read data from local JSON files
+// Serve all static website files
+// For local development, serve files from the parent directory.
+// For Vercel, static files are served natively from CDN, but this remains active as fallback.
+app.use(express.static(path.join(__dirname, '..')));
+
+// Utility to read data from JSON files
 function readDataFile(fileName) {
     const filePath = path.join(dataDir, fileName);
     if (!fs.existsSync(filePath)) {
@@ -33,7 +38,7 @@ function readDataFile(fileName) {
     }
 }
 
-// Utility to write data to local JSON files
+// Utility to write data to JSON files
 function writeDataFile(fileName, data) {
     const filePath = path.join(dataDir, fileName);
     try {
@@ -272,18 +277,18 @@ app.post('/api/checkout', (req, res) => {
 
 // Redirect default base URL to home page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'home.html'));
+    res.sendFile(path.join(__dirname, '..', 'home.html'));
 });
 
-// Error page handling
-app.use((req, res) => {
-    res.status(404).send('<h1>404 — Page Not Found</h1><p>The cosmetic product or page you are looking for does not exist.</p><a href="/home.html">Back to Home</a>');
-});
+// Start Server locally if not in Vercel Serverless environment
+if (!isVercel) {
+    app.listen(PORT, () => {
+        console.log(`\n========================================`);
+        console.log(`SaRa Cosmetic server is running locally:`);
+        console.log(`👉 http://localhost:${PORT}`);
+        console.log(`========================================\n`);
+    });
+}
 
-// Start Server
-app.listen(PORT, () => {
-    console.log(`\n========================================`);
-    console.log(`SaRa Cosmetic server is running on:`);
-    console.log(`👉 http://localhost:${PORT}`);
-    console.log(`========================================\n`);
-});
+// Export the app module for Vercel
+module.exports = app;
