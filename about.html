@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>SaRa Cosmetic — Our Story & Values</title>
+      <meta name="description" content="About SaRa Cosmetic — our story, values and products.">
+      <link rel="stylesheet" href="./Css/style.css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23c5a880'/%3E%3Ctext x='50' y='57' font-size='40' text-anchor='middle' fill='white' font-family='Arial'%3ES%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+      <!-- Header Section -->
+      <header class="site-header">
+            <div class="container">
+                  <h1 class="site-title">SaRa Cosmetic</h1>
+                  <button class="mobile-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+                  <nav id="site-nav" class="site-nav">
+                        <ul>
+                              <li><a href="./home.html"><i class="fas fa-home"></i> Home</a></li>
+                              <li><a href="./about.html"><i class="fas fa-user"></i> About</a></li>
+                              <li><a href="./services.html"><i class="fa-solid fa-cart-shopping"></i> Shop</a></li>
+                              <li><a href="./contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                              <li><a href="#" id="cart-toggle-btn"><i class="fas fa-shopping-bag"></i> Cart (<span id="cart-count">0</span>)</a></li>
+                        </ul>
+                  </nav>
+            </div>
+      </header>
+
+      <!-- About Section -->
+      <section class="container_LR">
+            <div class="container_left">
+                  <!-- Section 1 -->
+                  <div class="sitebarleft">
+                        <img src="./assets/Dior.jpg" alt="Face Makeup" class="image2">
+                        <div class="about-content">
+                              <h1>Face Makeup</h1>
+                              <p>Face makeup refers to products and techniques used to enhance, even out, or transform the appearance of the skin. It acts as a blank canvas to highlight your true facial definition and aesthetic.</p>
+                              <div class="more-details" style="display: none;">
+                                    <p>Purpose of Face Makeup:
+                                    • Enhancement: Highlight natural features and give a polished look.
+                                    • Correction: Cover imperfections such as blemishes, uneven skin tone, or redness.
+                                    • Transformation: Create different styles for occasions, moods, or artistic expression.
+                                    • Protection: Some products offer SPF and other skin-nourishing benefits.</p>
+                              </div>
+                              <button class="readMoreBtn">READ MORE</button>
+                        </div>
+                  </div>
+
+                  <!-- Section 2 -->
+                  <div class="sitebarleft">
+                        <img src="./assets/LipDior.jpg" alt="Lipstick Makeup" class="image2">
+                        <div class="about-content">
+                              <h1>Lipstick Makeup</h1>
+                              <p>Lipstick is a cosmetic product designed to add color, texture, and protection to the lips. It has been a timeless symbol of beauty and self-expression, used for enhancing or altering the appearance of lips to suit various styles and occasions.</p>
+                              <div class="more-details" style="display: none;">
+                                    <p>Lipstick Trends and Innovations:
+                                    • Bold Colors: Bright reds, electric pinks, and unique shades like black or blue.
+                                    • Ombré Lips: Gradual blending of two shades for depth and dimension.
+                                    • Nourishing Lipsticks: Enriched with skincare ingredients like hyaluronic acid.
+                                    • Eco-Friendly Lipsticks: Vegan, cruelty-free, and sustainably packaged options.</p>
+                              </div>
+                              <button class="readMoreBtn">READ MORE</button>
+                        </div>
+                  </div>
+
+                  <!-- Section 3 -->
+                  <div class="sitebarleft">
+                        <img src="./assets/makupkit.jpg" alt="Gift Makeup Kits" class="image2">
+                        <div class="about-content">
+                              <h1>Gift Makeup Kits</h1>
+                              <p>Gift makeup kits are thoughtfully curated sets of cosmetic products designed to cater to a variety of beauty needs. They are popular as presents for birthdays, holidays, anniversaries, or other special occasions, offering a versatile and exciting way for recipients to experiment with makeup.</p>
+                              <div class="more-details" style="display: none;">
+                                    <p>Benefits of Gift Makeup Kits:
+                                    • Variety: A single kit provides access to multiple products and shades.
+                                    • Cost-Effective: Often cheaper than buying individual items separately.
+                                    • Convenience: Ready-to-use sets eliminate the need to shop for products individually.
+                                    • Presentation: Attractive packaging makes them a delightful and luxurious gift option.</p>
+                              </div>
+                              <button class="readMoreBtn">READ MORE</button>
+                        </div>
+                  </div>
+
+                  <!-- Section 4 -->
+                  <div class="sitebarleft">
+                        <img src="./assets/foundaiton_dior.jpg" alt="Foundation Makeup" class="image2">
+                        <div class="about-content">
+                              <h1>Foundation</h1>
+                              <p>Foundation is a cosmetic product applied to the face to create an even, smooth complexion. It is the cornerstone of many makeup routines, acting as the base layer upon which other products are applied. Its primary purpose is to even out skin tone, cover imperfections, and provide a polished appearance.</p>
+                              <div class="more-details" style="display: none;">
+                                    <p>Benefits of Foundation:
+                                    • Smooths Skin Texture: Creates an even canvas for makeup.
+                                    • Covers Imperfections: Hides blemishes, redness, and discoloration.
+                                    • Enhances Longevity: Holds other makeup products like blush and bronzer in place.
+                                    • Protects Skin: Some foundations include SPF and skincare benefits.</p>
+                              </div>
+                              <button class="readMoreBtn">READ MORE</button>
+                        </div>
+                  </div>
+            </div>                                
+      </section>
+    
+      <!-- Cart Drawer -->
+      <div class="cart-overlay" id="cart-overlay"></div>
+      <div class="cart-drawer" id="cart-drawer">
+            <div class="cart-header">
+                  <h2>Shopping Cart</h2>
+                  <button class="cart-close" id="cart-close">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items-container">
+                  <!-- Dynamically populated in app.js -->
+            </div>
+            <div class="cart-footer">
+                  <div class="cart-total">
+                        <span>Total:</span>
+                        <span id="cart-subtotal">$0.00</span>
+                  </div>
+                  <button class="checkout-btn" id="checkout-btn">Proceed To Checkout</button>
+            </div>
+      </div>
+
+      <!-- Footer Section -->
+      <footer>
+            <div class="footer-content">
+                  <div>
+                        <h3>About SaRa</h3>
+                        <p>We believe in delivering every woman a piece of individual beauty and highlight her natural radiance through premium quality, ethically sourced cosmetics. Elevate your everyday routine with Chantalle & SaRa collections.</p>
+                  </div>
+                  <div>
+                        <h3>Pages</h3>
+                        <ul>
+                              <li><a href="./home.html">Home</a></li>
+                              <li><a href="./about.html">About</a></li>
+                              <li><a href="./services.html">Shop</a></li>
+                              <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                  </div>
+                  <div>
+                        <h3>Sign Up For Our Newsletter</h3>
+                        <p style="margin-bottom: 15px;">Stay informed about the latest exclusive launches and novelties:</p>
+                        <form id="newsletter-form">
+                              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required>
+                              <button type="submit" class="btnsubmit">Subscribe</button>
+                              <div class="form-message" aria-live="polite"></div>
+                        </form>
+                  </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                  <p>&copy; 2026 Chantalle & SaRa Cosmetics. All rights reserved.</p>
+            </div>
+      </footer>
+</body>
+<script src="./app.js"></script>
+</html>
